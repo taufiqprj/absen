@@ -4,16 +4,17 @@
     <title>Buka YouThhhh</title>
 </head>
 <body>
-    <button onclick="openYouTube()">Buka dana</button>
+    <button onclick="openYouTube()">Buka danaku</button>
 
     <script>
         var dataku="intent://link.dana.id/kaget?c=smepnnqmj&r=cMU7Ft#Intent;package=id.dana;scheme=https;end";
         function openYouTube() {
               try {
                 window.location.href = dataku;
-            } catch (e) {
+              } catch (e) {
                 // Menangani error jika URI tidak dapat dibuka
                 console.log("Gagal membuka aplikasi Dana. Silakan buka halaman web Dana.");
+                window.location.href = "https://www.google.com";
                 
             }
         }
