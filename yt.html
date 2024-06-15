@@ -77,7 +77,7 @@
         // Function to load video
         function loadVideo(videoId) {
             videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`;
-            counter = 30;
+            counter = 60;
             counterDisplay.innerText = counter;
             let interval = setInterval(() => {
                 counter--;
@@ -133,7 +133,7 @@
                             showAlert('Link submitted successfully!', 'success');
                             setTimeout(function() {
                             //your code to be executed after 1 second
-                            window.location.href = 'https://taufiqprj.github.io/absen/yt.html';
+                            loader();
                             }, 3000);
                             
                         } else if (response === 'duplicate') {
@@ -153,7 +153,9 @@
         });
 
         // Load the initial video from Google Sheet or default video
-        $.ajax({
+        function loader(){
+            alertContainer.innerHTML = "";
+            $.ajax({
             url: 'https://script.google.com/macros/s/AKfycbwstfT_-c9yniLssPvfANGPYEbOwmWa2ck8SGxc_opHiKBYr_PKyudO8kC7EShtZi1-/exec',
             method: 'GET',
             success: function(response) {
@@ -172,6 +174,10 @@
             }
         });
 
+        }
+
+        loader();
+        
         // Function to extract video ID from YouTube link
         function getYouTubeVideoId(url) {
             const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
