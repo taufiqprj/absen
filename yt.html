@@ -77,7 +77,7 @@
         // Function to load video
         function loadVideo(videoId) {
             videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`;
-            counter = 180;
+            counter = 30;
             counterDisplay.innerText = counter;
             let interval = setInterval(() => {
                 counter--;
