@@ -39,7 +39,7 @@
 <body>
     
     <div class="container">
-        <h2>Saling View 3 Menit</h2>
+        <h2>Saling View 3 Menit ...</h2>
         <div id="video-container" class="text-center">
             <iframe id="youtube-video" width="560" height="315" frameborder="0" allow="autoplay" allowfullscreen></iframe>
             <div id="video-overlay"></div>
@@ -133,7 +133,7 @@
                             showAlert('Link submitted successfully!', 'success');
                             setTimeout(function() {
                             //your code to be executed after 1 second
-                            location.reload();
+                            window.location.href = 'https://taufiqprj.github.io/absen/yt.html';
                             }, 3000);
                             
                         } else if (response === 'duplicate') {
